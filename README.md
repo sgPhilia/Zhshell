@@ -24,9 +24,20 @@ Architecture: Lexer → Parser → Executor.
 
 zhshell/
 ├── include/
+│   ├── builtin.h     # Built-in command declarations (cd, pwd, etc.)
+│   ├── executor.h    # Process management and execution logic
+│   ├── lexer.h       # Tokenizer and string chunking definitions
+│   ├── parser.h      # Command and Pipeline structural layout
+│   └── shell.h       # Main REPL loop and shell configurations
 ├── src/
-├── Makefile
-└── README.md
+│   ├── builtin.cpp   # Implementation of built-in functions
+│   ├── executor.cpp  # Forking, execution, and multi-pipe routing
+│   ├── lexer.cpp     # State-machine based lexical analyzer
+│   ├── main.cpp      # Application entry point
+│   ├── parser.cpp    # Syntactic abstraction layer
+│   └── shell.cpp     # Read-Eval-Print-Loop (REPL) orchestration
+├── Makefile          # Build Automation configuration
+└── README.md         # Documentation
 
 ---
 
