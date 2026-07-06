@@ -36,7 +36,6 @@ std::vector<Token> tokenize(const std::string& input) {
                 tokens.push_back({TOKEN_WORD, current_word});
                 current_word = "";
             }
-            // ตรวจสอบ && หรือ || ในอนาคต (Phase 11)
             tokens.push_back({TOKEN_PIPE, "|"});
         } else if (c == '>') {
             if (!current_word.empty()) {
@@ -44,7 +43,7 @@ std::vector<Token> tokenize(const std::string& input) {
                 current_word = "";
             }
             if (i + 1 < input.length() && input[i + 1] == '>') {
-                tokens.push_back({TOKEN_REDIRECT_REPLACE, ">>"}); // Append Mode
+                tokens.push_back({TOKEN_REDIRECT_REPLACE, ">>"}); 
                 i++;
             } else {
                 tokens.push_back({TOKEN_REDIRECT_OUT, ">"});
